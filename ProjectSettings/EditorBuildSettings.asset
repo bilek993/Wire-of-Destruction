@@ -4,4 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MyContent/Levels/gameplay.unity
+    guid: ce49a44ece7b90b41ac2e82582e60a8c
