@@ -4,35 +4,50 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	public float speed = 7;
+	public float MovementSpeed = 7;
+    public Camera PlayerCamera;
 
-	Rigidbody rigidbodyThis;
+	private Rigidbody _rigidbodyThis;
 
 	void Start () 
 	{
-		rigidbodyThis = GetComponent<Rigidbody>();
+		_rigidbodyThis = GetComponent<Rigidbody>();
+        // TODO: Move cursor logic to another class
+        MouseHelper.DisableCursor();
 	}
 
 	void Update () 
 	{
-		Vector3 movement = transform.forward * (Input.GetAxis("Vertical"));
-		movement += transform.right * (Input.GetAxis("Horizontal"));
-        movement *= speed;
+        Movement();
+        MouseLook();
+	}
+
+    private void Movement()
+    {
+        Vector3 movement = transform.forward * (Input.GetAxis("Vertical"));
+        movement += transform.right * (Input.GetAxis("Horizontal"));
+        movement *= MovementSpeed;
 
         NormalizeMovement(ref movement);
 
         movement = transform.position + (movement * Time.deltaTime);
-        rigidbodyThis.MovePosition(movement);
-	}
+        _rigidbodyThis.MovePosition(movement);
+    }
 
-    void NormalizeMovement(ref Vector3 vectorToNormalize)
+    private void MouseLook()
+    {
+        transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0));
+        PlayerCamera.transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
+    }
+
+    private void NormalizeMovement(ref Vector3 vectorToNormalize)
     {
         float pythagoras = ((vectorToNormalize.x * vectorToNormalize.x) + (vectorToNormalize.z * vectorToNormalize.z));
 
-        if (pythagoras > speed * speed)
+        if (pythagoras > MovementSpeed * MovementSpeed)
         {
             float magnitude = Mathf.Sqrt(pythagoras);
-            float multiplier = speed / magnitude;
+            float multiplier = MovementSpeed / magnitude;
             vectorToNormalize.x *= multiplier;
             vectorToNormalize.z *= multiplier;
         }
