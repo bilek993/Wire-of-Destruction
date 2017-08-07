@@ -7,10 +7,13 @@ public class Player : MonoBehaviour {
 	public float MovementSpeed = 7;
     public float JumpVelocity = 3;
     public Camera PlayerCamera;
+    public float maxCameraAngel = 75;
+    public float minCameraAngel = -75;
 
-	private Rigidbody _playerRigidbody;
+    private Rigidbody _playerRigidbody;
     private bool _canDoubleJump = false;
     private float _distanceToGround;
+    private float _currentRotationX;
 
 	void Start () 
 	{
@@ -43,7 +46,10 @@ public class Player : MonoBehaviour {
     private void MouseLook()
     {
         transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0));
-        PlayerCamera.transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
+
+        _currentRotationX -= Input.GetAxis("Mouse Y");
+        _currentRotationX  = Mathf.Clamp(_currentRotationX, minCameraAngel, maxCameraAngel);
+        PlayerCamera.transform.localEulerAngles = new Vector3(_currentRotationX, 0, 0);
     }
 
     private void Jumping()
