@@ -1,0 +1,368 @@
+fileFormatVersion: 2
+guid: e98667310f6951b42ae4cc6e95a3d06b
+timeCreated: 1502207608
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Ammo
+    100002: Assault
+    100004: ball_l
+    100006: ball_l_end
+    100008: ball_r
+    100010: ball_r_end
+    100012: calf_l
+    100014: calf_r
+    100016: Camera
+    100018: clavicle_l
+    100020: clavicle_r
+    100022: foot_l
+    100024: foot_r
+    100026: Glasses
+    100028: gloves
+    100030: hand_l
+    100032: hand_r
+    100034: hands
+    100036: hands-base
+    100038: //RootNode
+    100040: head
+    100042: head_end
+    100044: index_01_l
+    100046: index_01_r
+    100048: index_02_l
+    100050: index_02_r
+    100052: index_03_l
+    100054: index_03_l_end
+    100056: index_03_r
+    100058: index_03_r_end
+    100060: lowerarm_l
+    100062: lowerarm_r
+    100064: middle_01_l
+    100066: middle_01_r
+    100068: middle_02_l
+    100070: middle_02_r
+    100072: middle_03_l
+    100074: middle_03_l_end
+    100076: middle_03_r
+    100078: middle_03_r_end
+    100080: neck_01
+    100082: pelvis
+    100084: pinky_01_l
+    100086: pinky_01_r
+    100088: pinky_02_l
+    100090: pinky_02_r
+    100092: pinky_03_l
+    100094: pinky_03_l_end
+    100096: pinky_03_r
+    100098: pinky_03_r_end
+    100100: ring_01_l
+    100102: ring_01_r
+    100104: ring_02_l
+    100106: ring_02_r
+    100108: ring_03_l
+    100110: ring_03_l_end
+    100112: ring_03_r
+    100114: ring_03_r_end
+    100116: Root
+    100118: Sighting
+    100120: spine_01
+    100122: spine_02
+    100124: spine_03
+    100126: thigh_l
+    100128: thigh_r
+    100130: thumb_01_l
+    100132: thumb_01_r
+    100134: thumb_02_l
+    100136: thumb_02_r
+    100138: thumb_03_l
+    100140: thumb_03_l_end
+    100142: thumb_03_r
+    100144: thumb_03_r_end
+    100146: upperarm_l
+    100148: upperarm_r
+    400000: Ammo
+    400002: Assault
+    400004: ball_l
+    400006: ball_l_end
+    400008: ball_r
+    400010: ball_r_end
+    400012: calf_l
+    400014: calf_r
+    400016: Camera
+    400018: clavicle_l
+    400020: clavicle_r
+    400022: foot_l
+    400024: foot_r
+    400026: Glasses
+    400028: gloves
+    400030: hand_l
+    400032: hand_r
+    400034: hands
+    400036: hands-base
+    400038: //RootNode
+    400040: head
+    400042: head_end
+    400044: index_01_l
+    400046: index_01_r
+    400048: index_02_l
+    400050: index_02_r
+    400052: index_03_l
+    400054: index_03_l_end
+    400056: index_03_r
+    400058: index_03_r_end
+    400060: lowerarm_l
+    400062: lowerarm_r
+    400064: middle_01_l
+    400066: middle_01_r
+    400068: middle_02_l
+    400070: middle_02_r
+    400072: middle_03_l
+    400074: middle_03_l_end
+    400076: middle_03_r
+    400078: middle_03_r_end
+    400080: neck_01
+    400082: pelvis
+    400084: pinky_01_l
+    400086: pinky_01_r
+    400088: pinky_02_l
+    400090: pinky_02_r
+    400092: pinky_03_l
+    400094: pinky_03_l_end
+    400096: pinky_03_r
+    400098: pinky_03_r_end
+    400100: ring_01_l
+    400102: ring_01_r
+    400104: ring_02_l
+    400106: ring_02_r
+    400108: ring_03_l
+    400110: ring_03_l_end
+    400112: ring_03_r
+    400114: ring_03_r_end
+    400116: Root
+    400118: Sighting
+    400120: spine_01
+    400122: spine_02
+    400124: spine_03
+    400126: thigh_l
+    400128: thigh_r
+    400130: thumb_01_l
+    400132: thumb_01_r
+    400134: thumb_02_l
+    400136: thumb_02_r
+    400138: thumb_03_l
+    400140: thumb_03_l_end
+    400142: thumb_03_r
+    400144: thumb_03_r_end
+    400146: upperarm_l
+    400148: upperarm_r
+    2000000: Camera
+    2300000: Ammo
+    2300002: Assault
+    2300004: Glasses
+    2300006: Sighting
+    3300000: Ammo
+    3300002: Assault
+    3300004: Glasses
+    3300006: Sighting
+    4300000: Assault
+    4300002: Ammo
+    4300004: Sighting
+    4300006: Glasses
+    4300008: gloves
+    4300010: hands-base
+    7400000: hands|Edge Climbing
+    7400002: hands|Equip fast
+    7400004: hands|Equip Long
+    7400006: hands|Idle
+    7400008: hands|Shooting
+    7400010: Assault|Edge Climbing
+    9500000: //RootNode
+    13700000: gloves
+    13700002: hands-base
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: hands|Equip fast
+      takeName: hands|Equip fast
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hands|Equip Long
+      takeName: hands|Equip Long
+      firstFrame: 0
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hands|Idle
+      takeName: hands|Idle
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hands|Shooting
+      takeName: hands|Shooting
+      firstFrame: 0
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
