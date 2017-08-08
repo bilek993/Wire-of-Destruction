@@ -10,7 +10,7 @@ public class GameInitializer : MonoBehaviour
 
     private DepthOfFieldModel.Settings _settingsDOF;
     private PostProcessingProfile _postProcessingProfile;
-    private bool _returnToNormalDOF = false;
+    private bool _returnToNormalDOF;
     private float _currentFocusDistance;
 
     void Start()

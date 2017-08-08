@@ -7,15 +7,18 @@ public class Player : MonoBehaviour {
 	public float MovementSpeed = 7;
     public float JumpVelocity = 3;
     public Camera PlayerCamera;
-    public float maxCameraAngel = 75;
-    public float minCameraAngel = -75;
+    public float MaxCameraAngel = 75;
+    public float MinCameraAngel = -75;
+    public AudioSource LandingAudioSource;
 
     private Rigidbody _playerRigidbody;
-    private bool _canDoubleJump = false;
+    private bool _canDoubleJump;
     private float _distanceToGround;
     private float _currentRotationX;
+    private bool _isGrounded;
 
-	void Start () 
+
+    void Start () 
 	{
 		_playerRigidbody = GetComponent<Rigidbody>();
 	    _distanceToGround = GetComponent<CapsuleCollider>().height / 2;
@@ -48,18 +51,18 @@ public class Player : MonoBehaviour {
         transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0));
 
         _currentRotationX -= Input.GetAxis("Mouse Y");
-        _currentRotationX  = Mathf.Clamp(_currentRotationX, minCameraAngel, maxCameraAngel);
+        _currentRotationX  = Mathf.Clamp(_currentRotationX, MinCameraAngel, MaxCameraAngel);
         PlayerCamera.transform.localEulerAngles = new Vector3(_currentRotationX, 0, 0);
     }
 
     private void Jumping()
     {
-        bool isGrounded = Physics.Raycast(transform.position, -Vector3.up, _distanceToGround + 0.1f);
+        _isGrounded = Physics.Raycast(transform.position, -Vector3.up, _distanceToGround + 0.1f);
 
         if (Input.GetButtonDown("Jump"))
         {
 
-            if (isGrounded)
+            if (_isGrounded)
             {
                 Jump();
             }
@@ -70,7 +73,7 @@ public class Player : MonoBehaviour {
             }
         }
 
-        if (isGrounded)
+        if (_isGrounded)
             _canDoubleJump = true;
     }
 
@@ -90,5 +93,15 @@ public class Player : MonoBehaviour {
             vectorToNormalize.x *= multiplier;
             vectorToNormalize.z *= multiplier;
         }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.impulse.y >= 10)
+            LandingAudioSource.volume = 1;
+        else
+            LandingAudioSource.volume = collision.impulse.y/10;
+
+        LandingAudioSource.Play();
     }
 }
