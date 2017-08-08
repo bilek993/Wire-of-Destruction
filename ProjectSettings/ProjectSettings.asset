@@ -121,7 +121,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0.2017.08.04
+  bundleVersion: 1.0.2017.08.08
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -143,7 +143,7 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.JakubBilinski.WireofDestruction
   buildNumber:
-    Standalone: 1020170804
+    Standalone: 1020170808
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
