@@ -23,8 +23,8 @@ public class GameInitializer : MonoBehaviour
     {
         if (_returnToNormalDOF)
         {
-            if (_currentFocusDistance < 0.47f)
-                _currentFocusDistance += Time.deltaTime * 0.5f;
+            if (_currentFocusDistance < 0.8f)
+                _currentFocusDistance += Time.deltaTime;
 
             updateDOF(_currentFocusDistance);
         }
