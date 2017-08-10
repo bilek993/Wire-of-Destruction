@@ -10,8 +10,10 @@ public class Player : MonoBehaviour {
     public float MaxCameraAngel = 75;
     public float MinCameraAngel = -75;
     public AudioSource LandingAudioSource;
+    public AudioSource LandingHardAudioSource;
     public float MaximumLandingForce = 11;
     public Animator PlayerAnimator;
+    public NarratorVoiceSystem Narrator;
 
     private Rigidbody _playerRigidbody;
     private bool _canDoubleJump;
@@ -124,6 +126,7 @@ public class Player : MonoBehaviour {
         if (collision.impulse.y >= MaximumLandingForce)
         {
             LandingAudioSource.volume = 1;
+            Narrator.Say(NarratorVoiceSystem.MessageType.ShieldOnline);
 
             if (!_animationLandingIsPlaying)
                 SendMessage("PlayLandingAnimation");
