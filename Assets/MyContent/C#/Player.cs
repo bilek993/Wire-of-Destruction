@@ -10,12 +10,15 @@ public class Player : MonoBehaviour {
     public float MaxCameraAngel = 75;
     public float MinCameraAngel = -75;
     public AudioSource LandingAudioSource;
+    public float MaximumLandingForce = 11;
+    public Animator PlayerAnimator;
 
     private Rigidbody _playerRigidbody;
     private bool _canDoubleJump;
     private float _distanceToGround;
     private float _currentRotationX;
     private bool _isGrounded;
+    private bool _animationLandingIsPlaying;
 
 
     void Start () 
@@ -29,10 +32,31 @@ public class Player : MonoBehaviour {
 
 	void Update () 
 	{
-        Movement();
-        MouseLook();
-        Jumping();
+	    if (!_animationLandingIsPlaying)
+	    {
+	        Movement();
+	        MouseLook();
+	        Jumping();
+        }
 	}
+
+    IEnumerator PlayLandingAnimation()
+    {
+        _animationLandingIsPlaying = true;
+
+        Animator animator = PlayerCamera.GetComponent<Animator>();
+        animator.enabled = true;
+        PlayerAnimator.gameObject.SetActive(false);
+
+        animator.SetTrigger("TriggerAnimation");
+        yield return new WaitForSeconds(1f);
+        animator.enabled = false;
+        _currentRotationX = 0;
+        PlayerAnimator.gameObject.SetActive(true);
+        PlayerAnimator.SetTrigger("EquiptFast");
+
+        _animationLandingIsPlaying = false;
+    }
 
     private void Movement()
     {
@@ -97,10 +121,17 @@ public class Player : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.impulse.y >= 10)
+        if (collision.impulse.y >= MaximumLandingForce)
+        {
             LandingAudioSource.volume = 1;
+
+            if (!_animationLandingIsPlaying)
+                SendMessage("PlayLandingAnimation");
+        }
         else
-            LandingAudioSource.volume = collision.impulse.y/10;
+        {
+            LandingAudioSource.volume = collision.impulse.y / MaximumLandingForce;
+        }
 
         LandingAudioSource.Play();
     }
