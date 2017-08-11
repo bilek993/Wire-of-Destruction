@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
     public float MaxCameraAngel = 75;
     public float MinCameraAngel = -75;
     public AudioSource LandingAudioSource;
-    public AudioSource LandingHardAudioSource;
+    public AudioSource ShootingAudioSource;
     public float MaximumLandingForce = 11;
     public Animator PlayerAnimator;
     public NarratorVoiceSystem Narrator;
@@ -39,6 +39,7 @@ public class Player : MonoBehaviour {
 	        Movement();
 	        MouseLook();
 	        Jumping();
+            Shooting();
         }
 	}
 
@@ -58,6 +59,14 @@ public class Player : MonoBehaviour {
         PlayerAnimator.SetTrigger("EquiptFast");
 
         _animationLandingIsPlaying = false;
+    }
+
+    private void Shooting()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            PlayerAnimator.SetTrigger("Shooting");
+        }
     }
 
     private void Movement()
@@ -137,5 +146,10 @@ public class Player : MonoBehaviour {
         }
 
         LandingAudioSource.Play();
+    }
+
+    public void ShootingEvent()
+    {
+        ShootingAudioSource.Play();
     }
 }
