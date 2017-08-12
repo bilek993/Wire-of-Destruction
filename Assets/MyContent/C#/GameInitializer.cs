@@ -6,6 +6,7 @@ using UnityEngine.PostProcessing;
 public class GameInitializer : MonoBehaviour
 {
     public Player Player;
+    public SmoothGunMovement SmoothGunMovement;
     public PostProcessingBehaviour MainPostProcessingBehaviour;
 
     private DepthOfFieldModel.Settings _settingsDOF;
@@ -49,6 +50,7 @@ public class GameInitializer : MonoBehaviour
         yield return new WaitForSeconds(4f);
         _returnToNormalDOF = true;
         Player.enabled = true;
+        SmoothGunMovement.enabled = true;
 
         while (true)
         {
