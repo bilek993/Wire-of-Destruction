@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour {
     public float MaximumLandingForce = 11;
     public Animator PlayerAnimator;
     public NarratorVoiceSystem Narrator;
+    public Image ShieldEffectImage;
 
     private Rigidbody _playerRigidbody;
     private bool _canDoubleJump;
@@ -22,6 +24,11 @@ public class Player : MonoBehaviour {
     private bool _isGrounded;
     private bool _animationLandingIsPlaying;
 
+
+    void Awake ()
+    {
+        ShieldEffectImage.canvasRenderer.SetAlpha(0.01f);
+    }
 
     void Start () 
 	{
@@ -47,6 +54,7 @@ public class Player : MonoBehaviour {
     {
         _animationLandingIsPlaying = true;
 
+        ShieldEffectImage.CrossFadeAlpha(1f, 0.1f, false);
         Animator animator = PlayerCamera.GetComponent<Animator>();
         animator.enabled = true;
         PlayerAnimator.gameObject.SetActive(false);
@@ -57,6 +65,7 @@ public class Player : MonoBehaviour {
         _currentRotationX = 0;
         PlayerAnimator.gameObject.SetActive(true);
         PlayerAnimator.SetTrigger("EquiptFast");
+        ShieldEffectImage.CrossFadeAlpha(0f, 3f, false);
 
         _animationLandingIsPlaying = false;
     }
