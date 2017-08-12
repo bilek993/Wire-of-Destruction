@@ -36,11 +36,11 @@ public class StatisticsSystem : MonoBehaviour
 
     private void StatFrames()
     {
-        FramesText.text = "Timing: " + (1 / Time.smoothDeltaTime).ToString("#0.00") + "FPS (" + Time.smoothDeltaTime.ToString("##.00") + "ms)";
+        FramesText.text = "Timing: " + (1 / Time.smoothDeltaTime).ToString("0#.00") + "FPS (" + Time.smoothDeltaTime.ToString("0#.00") + "ms)";
     }
 
     private void StatFramesFixed()
     {
-        FramesFixedText.text = "Fixed timing: " + (1 / Time.fixedDeltaTime).ToString("#0.00") + "FPS (" + Time.fixedDeltaTime.ToString("#0.00") + "ms)";
+        FramesFixedText.text = "Fixed timing: " + (1 / Time.fixedDeltaTime).ToString("0#.00") + "FPS (" + Time.fixedDeltaTime.ToString("0#.00") + "ms)";
     }
 }
