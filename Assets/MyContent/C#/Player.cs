@@ -18,10 +18,12 @@ public class Player : MonoBehaviour {
     public Image ShieldEffectImage;
 
     private Rigidbody _playerRigidbody;
+    private FootstepLoop _footsteps;
     private bool _canDoubleJump;
     private float _distanceToGround;
     private float _currentRotationX;
     private bool _isGrounded;
+    private bool _isMoving;
     private bool _animationLandingIsPlaying;
 
 
@@ -34,6 +36,7 @@ public class Player : MonoBehaviour {
 	{
 		_playerRigidbody = GetComponent<Rigidbody>();
 	    _distanceToGround = GetComponent<CapsuleCollider>().height / 2;
+	    _footsteps = GetComponent<FootstepLoop>();
 
         // TODO: Move cursor logic to another class
         MouseHelper.DisableCursor();
@@ -47,7 +50,8 @@ public class Player : MonoBehaviour {
 	        MouseLook();
 	        Jumping();
             Shooting();
-        }
+	        FootsteepAudio();
+	    }
 	}
 
     IEnumerator PlayLandingAnimation()
@@ -70,6 +74,14 @@ public class Player : MonoBehaviour {
         _animationLandingIsPlaying = false;
     }
 
+    private void FootsteepAudio()
+    {
+        if (_isMoving && _isGrounded)
+            _footsteps.IsWalking = true;
+        else
+            _footsteps.IsWalking = false;
+    }
+
     private void Shooting()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -83,6 +95,11 @@ public class Player : MonoBehaviour {
         Vector3 movement = transform.forward * (Input.GetAxis("Vertical"));
         movement += transform.right * (Input.GetAxis("Horizontal"));
         movement *= MovementSpeed;
+
+        if (movement.magnitude >= 0.1f)
+            _isMoving = true;
+        else
+            _isMoving = false;
 
         NormalizeMovement(ref movement);
 
