@@ -7,10 +7,10 @@ using System;
 public class StatisticsSystem : MonoBehaviour
 {
     public GameObject Canvas;
-    public AudioSource MainAudioSource;
     public Text FramesText;
     public Text FramesFixedText;
     public LineRenderer GraphLine;
+    public GameObject GraphCamera;
 
     private bool _isEnabled;
 
@@ -33,6 +33,7 @@ public class StatisticsSystem : MonoBehaviour
 	    {
 	        _isEnabled = !_isEnabled;
             Canvas.SetActive(_isEnabled);
+            GraphCamera.SetActive(_isEnabled);
 	    }
 
 	    if (_isEnabled)
