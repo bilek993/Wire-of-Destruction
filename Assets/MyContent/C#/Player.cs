@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
     public Animator PlayerAnimator;
     public NarratorVoiceSystem Narrator;
     public Image ShieldEffectImage;
+    public Image Crosshair;
 
     private Rigidbody _playerRigidbody;
     private FootstepLoop _footsteps;
@@ -62,6 +63,7 @@ public class Player : MonoBehaviour {
         Animator animator = PlayerCamera.GetComponent<Animator>();
         animator.enabled = true;
         PlayerAnimator.gameObject.SetActive(false);
+        Crosshair.canvasRenderer.SetAlpha(0.01f);
 
         animator.SetTrigger("TriggerAnimation");
         yield return new WaitForSeconds(1f);
@@ -70,6 +72,7 @@ public class Player : MonoBehaviour {
         PlayerAnimator.gameObject.SetActive(true);
         PlayerAnimator.SetTrigger("EquiptFast");
         ShieldEffectImage.CrossFadeAlpha(0f, 3f, false);
+        Crosshair.CrossFadeAlpha(1f, 0.25f, false);
 
         _animationLandingIsPlaying = false;
     }

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
+using UnityEngine.UI;
 
 public class GameInitializer : MonoBehaviour
 {
     public Player Player;
     public SmoothGunMovement SmoothGunMovement;
     public PostProcessingBehaviour MainPostProcessingBehaviour;
+    public Image Crosshair;
 
     private DepthOfFieldModel.Settings _settingsDOF;
     private PostProcessingProfile _postProcessingProfile;
@@ -16,6 +18,7 @@ public class GameInitializer : MonoBehaviour
 
     void Start()
     {
+        Crosshair.canvasRenderer.SetAlpha(0.01f);
         SetPostProcess();
 		SendMessage("InitializeGame");
 	}
@@ -51,6 +54,7 @@ public class GameInitializer : MonoBehaviour
         _returnToNormalDOF = true;
         Player.enabled = true;
         SmoothGunMovement.enabled = true;
+        Crosshair.CrossFadeAlpha(1f, 0.25f, false);
 
         while (true)
         {
