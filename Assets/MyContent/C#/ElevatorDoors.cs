@@ -10,6 +10,7 @@ public class ElevatorDoors : MonoBehaviour
 
     private Vector3 _door1InitialPosition;
     private Vector3 _door2InitialPosition;
+    private bool _closed;
 
     public void OpenDoors()
     {
@@ -19,7 +20,11 @@ public class ElevatorDoors : MonoBehaviour
 
     public void CloseDoors()
     {
-        iTween.MoveBy(Door2, iTween.Hash("x", -1.5, "easeType", "easeInOutQuad", "delay", delayTime, "speed", 0.4));
-        iTween.MoveBy(Door1, iTween.Hash("x", 1.5, "easeType", "easeInOutQuad", "delay", delayTime, "speed", 0.4));
+        if (!_closed)
+        {
+            _closed = true;
+            iTween.MoveBy(Door2, iTween.Hash("x", -1.5, "easeType", "easeInOutQuad", "delay", delayTime, "speed", 0.4));
+            iTween.MoveBy(Door1, iTween.Hash("x", 1.5, "easeType", "easeInOutQuad", "delay", delayTime, "speed", 0.4));
+        }
     }
 }
