@@ -10,6 +10,8 @@ public class GameInitializer : MonoBehaviour
     public SmoothGunMovement SmoothGunMovement;
     public PostProcessingBehaviour MainPostProcessingBehaviour;
     public Image Crosshair;
+    public ElevatorDoors Doors1;
+    public ElevatorDoors Doors2;
 
     private DepthOfFieldModel.Settings _settingsDOF;
     private PostProcessingProfile _postProcessingProfile;
@@ -65,5 +67,8 @@ public class GameInitializer : MonoBehaviour
         }
 
         enabled = false;
+
+        Doors1.OpenDoors();
+        Doors2.OpenDoors();
     }
 }
