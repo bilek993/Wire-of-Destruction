@@ -21,6 +21,7 @@ public class GameInitializer : MonoBehaviour
 
     void Start()
     {
+        ScreenTransition.gameObject.SetActive(true);
         Crosshair.canvasRenderer.SetAlpha(0.01f);
         SetPostProcess();
 		SendMessage("InitializeGame");
