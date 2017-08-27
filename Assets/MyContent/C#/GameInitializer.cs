@@ -10,6 +10,7 @@ public class GameInitializer : MonoBehaviour
     public SmoothGunMovement SmoothGunMovement;
     public PostProcessingBehaviour MainPostProcessingBehaviour;
     public Image Crosshair;
+    public Image ScreenTransition;
     public ElevatorDoors Doors1;
     public ElevatorDoors Doors2;
 
@@ -52,7 +53,11 @@ public class GameInitializer : MonoBehaviour
 
     IEnumerator InitializeGame()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(0.25f);
+        ScreenTransition.CrossFadeAlpha(0f, 1f, false);
+        yield return new WaitForSeconds(1f);
+        ScreenTransition.gameObject.SetActive(false);
+        yield return new WaitForSeconds(2.75f);
         _returnToNormalDOF = true;
         Player.enabled = true;
         SmoothGunMovement.enabled = true;
