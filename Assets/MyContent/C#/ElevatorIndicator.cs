@@ -10,7 +10,9 @@ public class ElevatorIndicator : MonoBehaviour
 
     private float _currentOffset;
 
-	void Start ()
+#if !UNITY_EDITOR
+
+    void Start ()
 	{
 	    _currentOffset = StartValue;
 		LcdMaterial.SetTextureOffset("_MainTex", new Vector2(0, StartValue));
@@ -24,4 +26,6 @@ public class ElevatorIndicator : MonoBehaviour
             LcdMaterial.SetTextureOffset("_MainTex", new Vector2(0, _currentOffset));
         }
 	}
+
+#endif
 }
