@@ -13,8 +13,10 @@ ModelImporter:
     400004: //RootNode
     2300000: Buttons
     2300002: Floor Inidcator
+    2300004: //RootNode
     3300000: Buttons
     3300002: Floor Inidcator
+    3300004: //RootNode
     4300000: Buttons
     4300002: Floor Inidcator
   materials:
